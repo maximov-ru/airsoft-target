@@ -1,0 +1,13 @@
+{
+  "name": "target-server",
+  "version": "0.0.1",
+  "description": "server target",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "Apache License 2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
