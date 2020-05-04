@@ -25,10 +25,10 @@ $(document).ready(() => {
 });
 
 pagesData.main = '' +
-    '<div class="container">' +
-    '   <div class="row">' +
+    '<div class="container h-100">' +
+    '   <div class="row align-items-center">' +
     '   <div class="col-2"></div><div class="col-8">' +
-    '<button class="btn btn-primary">Calibrate</button>" ' +
+    '<button class="btn btn-primary">Calibrate</button> <button class="btn btn-primary">Target</button>' +
     '</div><div class="col-2"></div>' +
     '   </div>' +
     '</div>';
