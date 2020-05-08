@@ -72,7 +72,8 @@ $(document).ready(() => {
         var Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
         Socket.onmessage = function(event) { processReceivedCommand(event); };
         page.net = new brain.NeuralNetwork();
-        page.tri = new Triangulation();
+        //page.tri = new Triangulation();
+        loadDataForTrain();
     }
     init();
 });
@@ -101,9 +102,9 @@ function addCalibrateSample(sample) {
                 })
         );
     }
-    page.net.train([
+    /*page.net.train([
         {input:sample, output: {x: xNorm, y: yNorm}}
-        ]);
+        ]);*/
     page.count++;
 }
 
@@ -114,7 +115,12 @@ function saveResultToStore(sample, xNorm, yNorm) {
 }
 
 function loadDataForTrain() {
-
+    $.ajax('http://127.0.0.1:3000/getAllData', {
+        dataType: 'json',
+        success: (data) => {
+            page.net.fromJSON(data);
+        }
+    });
 }
 
 function loadNeuralConfig() {
