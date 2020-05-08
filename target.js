@@ -104,9 +104,6 @@ function addCalibrateSample(sample) {
     page.net.train([
         {input:sample, output: {x: xNorm, y: yNorm}}
         ]);
-    if (page.count % 20 == 0) {
-        generate();
-    }
     page.count++;
 }
 
